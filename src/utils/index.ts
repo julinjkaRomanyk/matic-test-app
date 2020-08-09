@@ -1,7 +1,7 @@
 export const welcomeMessage: string = "Please, Answer a Few Questions";
 
 export const getEndComponentQuestion = (firstName: string, lastName: string, number: string): string => {
-    return `Thanks for Your Answers, ${firstName} ${lastName}. We Will Call You at number:${number}  Within 24 Hours`;
+    return `Thanks for Your Answers, ${firstName} ${lastName}. We Will Call You at number: ${number}  Within 24 Hours`;
 }
 
 export const statesList = [

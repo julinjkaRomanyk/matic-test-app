@@ -1,6 +1,6 @@
 import React from "react";
-import { getTestName } from "../../utils/test-utils";
-import { render, fireEvent } from "@testing-library/react";
+import { getTestName } from "utils/test-utils";
+import { render } from "@testing-library/react";
 
 import { Fade } from "./AnimationWrapper";
 

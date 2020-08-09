@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { Header } from "./Header";
-import { MainComponent } from "./MainComponent";
-import './App.css';
-
+import { Header } from "./Components/Header";
+import { MainComponent } from "./Containers/MainComponent";
 function App() {
   return (
     <div className="App">

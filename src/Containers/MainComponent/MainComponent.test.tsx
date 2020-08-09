@@ -1,8 +1,8 @@
 import React from "react";
-import { getTestName } from "../utils/test-utils";
+import { getTestName } from "utils/test-utils";
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import { MainComponent } from "./MainComponent";
 

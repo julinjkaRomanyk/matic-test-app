@@ -1,4 +1,4 @@
-import { getTestName } from "../utils/test-utils";
+import { getTestName } from "utils/test-utils";
 
 import { initializeValidators } from "./validation";
 

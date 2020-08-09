@@ -2,7 +2,7 @@ import React from "react";
 import ReactSelect from "react-select";
 import { Props as ReactSelectProps } from "react-select/src/Select";
 
-import { DefaultOption } from "./../utils/types";
+import { DefaultOption } from "utils/types";
 
 import "./SearchSelect.scss";
 
@@ -13,15 +13,16 @@ type Props<DefaultOption> = {
   styleProps?: object;
 };
 
-export const Select: React.FC<Props<DefaultOption>> = ({ selectProps, label }) => {
+export const Select: React.FC<Props<DefaultOption>> = ({ selectProps, label, error }) => {
   return (
-    <div className="Input-Wrapper">
-      {label && <div className="Input-Label" data-testid="label-select" >{label}</div>}
+    <div className={`Select-Wrapper ${error ? "Select-Wrapper-Error" : ""}`} >
+      {label && <div className="Select-Label" data-testid="label-select" >{label}</div>}
       <ReactSelect<DefaultOption>
         classNamePrefix="react-select"
         className="Search-Select"
         {...selectProps}
       />
+      {!!error ? <span className="Select-Error" data-testid={"Select-Error"}> {error} </span> : null}
     </div>
   );
 }

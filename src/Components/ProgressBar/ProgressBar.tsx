@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProgressBar.scss";
 
-import { Progress } from "./../utils/types";
+import { Progress } from "utils/types";
 
 interface Props {
     progress: Progress;

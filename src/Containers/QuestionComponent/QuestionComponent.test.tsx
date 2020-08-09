@@ -1,8 +1,8 @@
 import React from "react";
-import { getTestName } from "../utils/test-utils";
+import { getTestName } from "utils/test-utils";
 import { render, fireEvent, act } from "@testing-library/react";
 
-import  { FieldId } from "./../MainComponent/api";
+import  { FieldId } from "Containers/MainComponent/api";
 
 import { QuestionComponent } from "./QuestionComponent";
 

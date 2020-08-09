@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { getTestName } from "../utils/test-utils";
-import { Select } from "./";
+import { getTestName } from "utils/test-utils";
+import { Select } from ".";
 
 const defaultProps = {
     label: "label",

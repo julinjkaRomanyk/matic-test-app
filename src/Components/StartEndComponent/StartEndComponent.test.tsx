@@ -1,5 +1,5 @@
 import React from "react";
-import { getTestName } from "../utils/test-utils";
+import { getTestName } from "utils/test-utils";
 import { render, fireEvent } from "@testing-library/react";
 
 import { StartEndComponent } from "./StartEndComponent";

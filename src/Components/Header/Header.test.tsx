@@ -1,13 +1,13 @@
 import React from "react";
-import { getTestName } from "../utils/test-utils";
+import { getTestName } from "utils/test-utils";
 import { render } from "@testing-library/react";
 
-import { ProgressBarComponent } from "./ProgressBar";
+import { Header } from "./Header";
 
 
 describe(getTestName(__dirname), () => {
     test("Match snapshot", () => {
-      const { container } = render(<ProgressBarComponent  progress={ {current: 2, total: 5 }} />);
+      const { container } = render(<Header />);
   
       expect(container.firstChild).toMatchSnapshot();
     });

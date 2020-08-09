@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 import { questionArray } from "./api";
-import { QuestionComponent } from "./../QuestionComponent";
-import { Fade } from "./../QuestionComponent/AnimationWrapper";
-import { ProgressBarComponent } from "./../ProgressBar";
-import { StartEndComponent } from "./../StartEndComponent";
-import HomeImage from "./../images/HomeImage.png";
-import ThankYouImage from "./../images/ThankYouImage.png";
-import { welcomeMessage, getEndComponentQuestion } from "./../utils/index";
+import { QuestionComponent } from "Containers/QuestionComponent";
+import { Fade } from "Components/AnimationWrapper";
+import { ProgressBarComponent } from "Components/ProgressBar";
+import { StartEndComponent } from "Components/StartEndComponent";
+import HomeImage from "images/HomeImage.png";
+import ThankYouImage from "images/ThankYouImage.png";
+import { welcomeMessage, getEndComponentQuestion } from "utils/index";
 
-import { InfoStore } from "./../utils/types";
+import { InfoStore } from "utils/types";
 import "./MainComponent.scss"
 
 export const initialStoreInfo: InfoStore = {
@@ -30,6 +30,9 @@ export const MainComponent: React.FC = () => {
     const handleQuestionNumberChange = (counter: number) => {
         setQuestionCounter(counter + 1);
     }
+
+    const shouldRenderStartComponent = questionCounter === 0;
+    const shouldRenderEndComponent = questionCounter === questionArray.length + 1 ;
 
     const renderQuestionComponent = () => {
         return questionArray.map(item => {
@@ -53,8 +56,8 @@ export const MainComponent: React.FC = () => {
     const renderStartEndDateComponent = () => {
         return (
             <>
-                {questionCounter === 0 && <StartEndComponent message={welcomeMessage} buttonLabel="Start" onButtonClick={() => setQuestionCounter(1)} image={HomeImage} />}
-                {questionCounter === questionArray.length + 1 && <StartEndComponent message={getEndComponentQuestion(infoStore.firstName, infoStore.lastName, infoStore.phoneNumber)} image={ThankYouImage} />}
+                {shouldRenderStartComponent && <StartEndComponent message={welcomeMessage} buttonLabel="Start" onButtonClick={() => setQuestionCounter(1)} image={HomeImage} />}
+                {shouldRenderEndComponent && <StartEndComponent message={getEndComponentQuestion(infoStore.firstName, infoStore.lastName, infoStore.phoneNumber)} image={ThankYouImage} />}
             </>
         );
 
@@ -62,7 +65,7 @@ export const MainComponent: React.FC = () => {
 
     return (
         <div className="MainComponent-Wrapper" >
-            { questionCounter !== 0  && <ProgressBarComponent progress={{ current: questionCounter, total: questionArray.length }} /> }
+            { (!shouldRenderStartComponent && !shouldRenderEndComponent) && <ProgressBarComponent progress={{ current: questionCounter, total: questionArray.length }} /> }
             {renderStartEndDateComponent()}
             <div className="MainComponent">
                 {renderQuestionComponent()}

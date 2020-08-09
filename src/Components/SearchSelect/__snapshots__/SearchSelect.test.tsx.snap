@@ -2,10 +2,10 @@
 
 exports[`SearchSelect Renders markup correctly 1`] = `
 <div
-  class="Input-Wrapper"
+  class="Select-Wrapper "
 >
   <div
-    class="Input-Label"
+    class="Select-Label"
     data-testid="label-select"
   >
     label

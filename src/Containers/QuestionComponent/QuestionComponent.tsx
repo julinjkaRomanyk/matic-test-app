@@ -1,13 +1,13 @@
 import React, {useRef, useReducer} from "react";
 
-import { Button } from "./../Button";
-import { Input } from "./../Input";
-import { Select } from "./../SearchSelect";
+import { Button } from "Components/Button";
+import { Input } from "Components/Input";
+import { Select } from "Components/SearchSelect";
 
 import "./QuestionComponent.scss"
-import { Field, FieldId } from "./../MainComponent/api";
-import { InfoStore } from "./../utils/types";
-import { statesList } from "./../utils/index";
+import { Field, FieldId } from "Containers/MainComponent/api";
+import { InfoStore } from "utils/types";
+import { statesList } from "utils/index";
 import { validationErrorsReducer, initialValidationErrors, initializeValidators } from "./validation";
 
 export type Props = {
@@ -33,6 +33,7 @@ export const QuestionComponent: React.FC<Props> = ({ questionTitle, buttonLabel,
                     case FieldId.firstName: return validators.firstNameValid(infoStore[field.id]);
                     case FieldId.lastName: return validators.lastNameValid(infoStore[field.id]);
                     case FieldId.phoneNumber: return validators.phoneNumberValid(infoStore[field.id]);
+                    case FieldId.stateName: return validators.stateNameValid(infoStore[field.id]);
     
                     default: return true;
                 }
@@ -64,7 +65,7 @@ export const QuestionComponent: React.FC<Props> = ({ questionTitle, buttonLabel,
                             fields.map((field: Field) => {
                                 switch (field.type) {
                                     case "input": return <Input key={questionNumber + field.id} error={validationErrors[field.id]} label={field.label} onChange={(event) => handleValueChange(event, field.id )} mask={field.validation} />;           
-                                    case "select": return <Select key={questionNumber + field.id} selectProps={{...selectProps, onChange: (state: any) => handleValueChange(state.value, field.id) }} label={field.label} />;
+                                    case "select": return <Select key={questionNumber + field.id} error={validationErrors[field.id]} selectProps={{...selectProps, onChange: (state: any) => handleValueChange(state.value, field.id) }} label={field.label} />;
                                     default: return <Input  key={questionNumber + field.id} onChange={ () => {} } />;
                                 }
                             })
