@@ -2,6 +2,7 @@
 
 exports[`AnimationWrapper Match snapshot 1`] = `
 <div
+  data-testid="animation-wrapper"
   style="animation: fadeIn 0s;"
 />
 `;

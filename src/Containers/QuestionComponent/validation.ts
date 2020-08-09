@@ -20,13 +20,16 @@ export const validationErrorsReducer: Reducer<ValidationErrors, Partial<Validati
   ...newState
 });
 
+export const requiredFieldError = "This field is required";
+export const minCharactersLengthError = "Should contain at least 3 characters";
+export const maxCharactersLengthError = "Should not be greater than 128 characters";
 
 export const initializeValidators = (setValidationErrors: React.Dispatch<Partial<ValidationErrors>>) => ({
   firstNameValid(name: string) {
     const trimmedName = name.trim();
     if (!trimmedName) {
       setValidationErrors({
-        firstName: "This field is required"
+        firstName: requiredFieldError
       });
 
       return false;
@@ -34,7 +37,7 @@ export const initializeValidators = (setValidationErrors: React.Dispatch<Partial
 
     if (trimmedName.length < 3) {
       setValidationErrors({
-        firstName: "Should contain at least 3 characters"
+        firstName: minCharactersLengthError
       });
 
       return false;
@@ -42,7 +45,7 @@ export const initializeValidators = (setValidationErrors: React.Dispatch<Partial
 
     if (trimmedName.length > 128) {
       setValidationErrors({
-        firstName: "Should not be greater than 128 characters"
+        firstName: maxCharactersLengthError
       });
 
       return false;
@@ -59,7 +62,7 @@ export const initializeValidators = (setValidationErrors: React.Dispatch<Partial
     const trimmedName = name.trim();
     if (!trimmedName) {
       setValidationErrors({
-        lastName: "This field is required"
+        lastName: requiredFieldError
       });
 
       return false;
@@ -67,7 +70,7 @@ export const initializeValidators = (setValidationErrors: React.Dispatch<Partial
 
     if (trimmedName.length < 3) {
       setValidationErrors({
-        lastName: "Should contain at least 3 characters"
+        lastName: minCharactersLengthError
       });
 
       return false;
@@ -75,7 +78,7 @@ export const initializeValidators = (setValidationErrors: React.Dispatch<Partial
 
     if (trimmedName.length > 128) {
       setValidationErrors({
-        lastName: "Should not be greater than 128 characters"
+        lastName: maxCharactersLengthError
       });
 
       return false;
@@ -92,7 +95,7 @@ export const initializeValidators = (setValidationErrors: React.Dispatch<Partial
     const trimmedPhoneNumber = number.trim();
     if (!trimmedPhoneNumber) {
       setValidationErrors({
-        phoneNumber: "This field is required"
+        phoneNumber: requiredFieldError
       });
 
       return false;
@@ -114,9 +117,9 @@ export const initializeValidators = (setValidationErrors: React.Dispatch<Partial
   },
 
   stateNameValid(state: string) {
-    if (!state) {
+    if (!state.trim()) {
       setValidationErrors({
-        stateName: "This field is required"
+        stateName: requiredFieldError
       });
 
       return false;

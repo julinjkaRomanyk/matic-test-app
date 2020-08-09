@@ -1,6 +1,6 @@
 import { getTestName } from "utils/test-utils";
 
-import { initializeValidators } from "./validation";
+import { initializeValidators, requiredFieldError, minCharactersLengthError, maxCharactersLengthError } from "./validation";
 
 
 describe(getTestName(__dirname), () => {
@@ -19,21 +19,21 @@ describe(getTestName(__dirname), () => {
       const isValid = validators.firstNameValid("     ");
 
       expect(isValid).toEqual(false);
-      expect(setValidationErrorsSpy).toHaveBeenCalledWith({ firstName: "This field is required" });
+      expect(setValidationErrorsSpy).toHaveBeenCalledWith({ firstName: requiredFieldError });
     });
 
     test(`should return 'Should contain at least 3 characters' error when first name is less than 3 characters`, () => {
         const isValid = validators.firstNameValid("e ");
   
         expect(isValid).toEqual(false);
-        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ firstName: "Should contain at least 3 characters" });
+        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ firstName: minCharactersLengthError });
       });
 
       test(`should return 'Should not be greater than 128 characters' when first name is greater than 128 characters`, () => {
         const isValid = validators.firstNameValid("jgoirejgporjhbpo aerhjerihg ierjgoierj geruhgpierajgoer nughvroidfjrgbkerjngie 555555rjgoirajgrghinughvroidfjrgbkerjngie 555555rjgoirajgrghinughvroidfjrgbkerjngie 555555rjgoirajgrghi ");
   
         expect(isValid).toEqual(false);
-        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ firstName: "Should not be greater than 128 characters" });
+        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ firstName: maxCharactersLengthError });
       });
   });
 
@@ -43,21 +43,21 @@ describe(getTestName(__dirname), () => {
       const isValid = validators.lastNameValid("     ");
 
       expect(isValid).toEqual(false);
-      expect(setValidationErrorsSpy).toHaveBeenCalledWith({ lastName: "This field is required" });
+      expect(setValidationErrorsSpy).toHaveBeenCalledWith({ lastName: requiredFieldError });
     });
 
     test(`should return 'Should contain at least 3 characters' error when last name is less than 3 characters`, () => {
         const isValid = validators.lastNameValid("e ");
   
         expect(isValid).toEqual(false);
-        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ lastName: "Should contain at least 3 characters" });
+        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ lastName: minCharactersLengthError });
       });
 
       test(`should return 'Should not be greater than 128 characters' when first name is greater than 128 characters`, () => {
         const isValid = validators.lastNameValid("jgoirejgporjhbpo aerhjerihg ierjgoierj geruhgpierajgoer nughvroidfjrgbkerjngie 555555rjgoirajgrghinughvroidfjrgbkerjngie 555555rjgoirajgrghinughvroidfjrgbkerjngie 555555rjgoirajgrghi ");
   
         expect(isValid).toEqual(false);
-        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ lastName: "Should not be greater than 128 characters" });
+        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ lastName: maxCharactersLengthError });
       });
   });
 
@@ -66,7 +66,7 @@ describe(getTestName(__dirname), () => {
       const isValid = validators.phoneNumberValid("     ");
 
       expect(isValid).toEqual(false);
-      expect(setValidationErrorsSpy).toHaveBeenCalledWith({ phoneNumber: "This field is required" });
+      expect(setValidationErrorsSpy).toHaveBeenCalledWith({ phoneNumber: requiredFieldError });
     });
 
     test(`should not return errors if valid phone number provided`, () => {
@@ -83,4 +83,22 @@ describe(getTestName(__dirname), () => {
         expect(setValidationErrorsSpy).toHaveBeenCalledWith({ phoneNumber: "" });
       });
     });
+
+    describe(`stateNameValid()`, () => {
+      test(`should return 'This field is required' error when there is no value or empty spaces`, () => {
+        const isValid = validators.stateNameValid("     ");
+  
+        expect(isValid).toEqual(false);
+        expect(setValidationErrorsSpy).toHaveBeenCalledWith({ stateName: requiredFieldError });
+      });
+  
+        test(`should not return error in case state name is provided`, () => {
+          const isValid = validators.stateNameValid("Alaska");
+    
+          expect(isValid).toEqual(true);
+          expect(setValidationErrorsSpy).toHaveBeenCalledWith({ stateName: "" });
+        });
+      });
+
+    
 });

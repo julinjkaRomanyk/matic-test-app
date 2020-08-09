@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 type Props = {
   show: boolean;
@@ -6,7 +6,7 @@ type Props = {
 }
 
 export const Fade: React.FC<Props> = ({ show, children }) => {
-  const [shouldRender, setRender] = useState(show);
+  const [shouldRender, setRender] = React.useState(show);
 
   useEffect(() => {
     if (show) setRender(true);
@@ -21,6 +21,7 @@ export const Fade: React.FC<Props> = ({ show, children }) => {
       <div
         style={{ animation: `${show ? "fadeIn" : "fadeOut"} 0s` }}
         onAnimationEnd={onAnimationEnd}
+        data-testid="animation-wrapper"
       >
         {children}
       </div>
