@@ -1,0 +1,47 @@
+.QuestionComponent-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media all and (max-width: 736px) {
+        padding: 10px;
+    }
+}
+
+.QuestionComponent-QuestionTitle {
+    font-size: 48px;
+
+    @media all and (max-width: 736px) {
+        font-size: 38px;
+    }
+}
+
+.QuestionComponent-Input-Wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    margin-bottom: 24px;
+
+    @media all and (max-width: 736px) {
+        height: 40vh;
+        width: unset;
+
+        .Input-Wrapper {
+            padding-bottom: 25px;
+        }
+    }
+}
+
+.QuestionComponent-Inputs-Wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+
+    @media all and (max-width: 736px) {
+        flex-direction: column;
+        width: 100%;
+    }
+}

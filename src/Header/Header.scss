@@ -1,0 +1,45 @@
+.Header {
+    width: 100%;
+    background-color: white;
+}
+
+.Header-Wrapper {
+    padding: 15px 50px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.Header-Details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: IvyStyle Sans;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.Header-Details-WorkingHours {
+    color: #726969;
+}
+
+.Header-Details-Number {
+    border-bottom: 1px solid #ff500f;
+}
+
+@media screen and (min-width: 1000px) {
+    .Header-Wrapper {
+        padding: 15px 50px 15px 0px;
+        margin-left: 46vw;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .Header-Wrapper {
+        flex-direction: column;
+    }
+
+    .Header-Details {
+        line-height: 20px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainComponent Match snapshot 1`] = `
+<div
+  class="MainComponent-Wrapper"
+>
+  <div
+    class="Component-Wrapper"
+  >
+    <img
+      alt="Matic"
+      src="HomeImage.png"
+    />
+    <div
+      class="Component-Message"
+    >
+       
+      Please, Answer a Few Questions
+       
+    </div>
+    <button
+      class="Button"
+      data-testid="button"
+      id="button"
+    >
+      Start
+    </button>
+  </div>
+  <div
+    class="MainComponent"
+  />
+</div>
+`;

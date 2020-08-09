@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimationWrapper Match snapshot 1`] = `
+<div
+  style="animation: fadeIn 0s;"
+/>
+`;

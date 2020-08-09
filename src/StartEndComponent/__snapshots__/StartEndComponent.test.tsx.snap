@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartEndComponent Match snapshot 1`] = `
+<div
+  class="Component-Wrapper"
+>
+  <img
+    alt="Matic"
+    src="image"
+  />
+  <div
+    class="Component-Message"
+  >
+     
+    Hello
+     
+  </div>
+  <button
+    class="Button"
+    data-testid="button"
+    id="button"
+  >
+    Start
+  </button>
+</div>
+`;

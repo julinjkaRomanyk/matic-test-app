@@ -1,0 +1,49 @@
+.Input-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+
+    input {
+        background: #fcfaf9;
+        border: 1px solid #afa7a6;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 294px;
+        height: 42px;
+    }
+
+    input:focus {
+        outline: 0;
+    }
+}
+
+.Input-Wrapper:nth-of-type(even) {
+    margin-left: 30px;
+
+    @media all and (max-width: 736px) {
+        margin: 0;
+    }
+
+}
+
+.Input-Label {
+    color: #726969;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.Input-Error {
+    padding-top: 5px;
+    color: #ff500f;
+}
+
+.Input-Wrapper-Error {
+    input {
+        border: 1px solid #ff500f !important;
+    }
+
+    .Input-Label {
+        color: #ff500f;
+    }
+}

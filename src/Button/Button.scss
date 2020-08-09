@@ -1,0 +1,27 @@
+.Button {
+    height: 60px;
+    width: 185px;
+    border-radius: 30px;
+    background-color: #ff5122;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+}
+
+.Button:hover {
+    background-color: white;
+    color: #ff5122;
+    border: 2px solid #ff5122;
+    cursor: pointer;
+}
+
+.Button:active {
+    background-color: #ffbe1e;
+    color: #ff5122;
+    border: 2px solid #ff5122;
+}
+
+.Button:focus {
+    outline: 0;
+}

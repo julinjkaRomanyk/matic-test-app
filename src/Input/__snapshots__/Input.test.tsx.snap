@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Match snapshot 1`] = `
+<div
+  class="Input-Wrapper "
+>
+  <input
+    data-testid="Input"
+    value=""
+  />
+</div>
+`;

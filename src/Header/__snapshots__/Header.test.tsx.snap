@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Match snapshot 1`] = `
+<div
+  class="Header"
+>
+  <div
+    class="Header-Wrapper"
+  >
+    <div
+      class="Header-Logo"
+    >
+      <img
+        alt="Matic Logo"
+        src="Logo.png"
+      />
+    </div>
+    <div
+      class="Header-Details"
+    >
+      <div>
+        Call an insurance agent at 
+        <span
+          class="Header-Details-Number"
+        >
+          (877) 507-6722
+        </span>
+         
+      </div>
+      <div
+        class="Header-Details-WorkingHours"
+      >
+        Working Hours: 9AM - 5PM (EST)
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionComponent Match snapshot 1`] = `
+<div
+  class="QuestionComponent-Wrapper"
+>
+  <div
+    class="QuestionComponent-QuestionTitle"
+  >
+    What is Your Name?
+  </div>
+  <div
+    class="QuestionComponent-Input-Wrapper"
+  >
+    <div
+      class="QuestionComponent-Inputs-Wrapper"
+    >
+      <div
+        class="Input-Wrapper "
+      >
+        <span
+          class="Input-Label"
+          data-testid="Input-Label"
+        >
+           
+          First Name
+           
+        </span>
+        <input
+          data-testid="Input"
+          value=""
+        />
+      </div>
+      <div
+        class="Input-Wrapper "
+      >
+        <span
+          class="Input-Label"
+          data-testid="Input-Label"
+        >
+           
+          Last Name
+           
+        </span>
+        <input
+          data-testid="Input"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      class="Button"
+      data-testid="button"
+      id="button"
+    />
+  </div>
+</div>
+`;
