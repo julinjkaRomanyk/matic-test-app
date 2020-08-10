@@ -18,4 +18,4 @@ And ENJOY :)
 
 if you need to see test coverage - run 
 
-### `npm run test-coverage`
+### `npm run test:coverage`
