@@ -1,3 +1,5 @@
+@import "utils/_variables";
+
 .Input-Wrapper {
     display: flex;
     flex-direction: column;
@@ -5,8 +7,8 @@
     font-size: 16px;
 
     input {
-        background: #fcfaf9;
-        border: 1px solid #afa7a6;
+        background: $BackgroundColor;
+        border: 1px solid $Grey;
         box-sizing: border-box;
         border-radius: 4px;
         width: 294px;
@@ -28,22 +30,22 @@
 }
 
 .Input-Label {
-    color: #726969;
+    color: $Grey;
     font-size: 16px;
     padding-bottom: 5px;
 }
 
 .Input-Error {
     padding-top: 5px;
-    color: #ff500f;
+    color: $BasicOrange;
 }
 
 .Input-Wrapper-Error {
     input {
-        border: 1px solid #ff500f !important;
+        border: 1px solid $BasicOrange !important;
     }
 
     .Input-Label {
-        color: #ff500f;
+        color: $BasicOrange;
     }
 }

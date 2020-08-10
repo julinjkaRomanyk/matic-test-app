@@ -7,14 +7,15 @@ To use it locally on you machine, follow the steps bellow
 
 2. Open terminal inside the downloaded folder and run 
 
-### `npm i`
+    ### `npm i`
 
 3. After that start the project locally with
 
-### `npm run start`
+    ### `npm run start`
 
 And ENJOY :) 
 
+
 if you need to see test coverage - run 
 
-### `npm run test-coverage`
+    ### `npm run test-coverage`

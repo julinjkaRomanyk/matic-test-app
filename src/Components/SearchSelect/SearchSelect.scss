@@ -1,3 +1,5 @@
+@import "utils/_variables";
+
 .Select-Wrapper {
     display: flex;
     flex-direction: column;
@@ -5,8 +7,8 @@
     font-size: 16px;
 
     input {
-        background: #fcfaf9;
-        border: 1px solid #afa7a6;
+        background: $BackgroundColor;
+        border: 1px solid $Grey;
         border-radius: 4px;
         width: 294px;
         height: 42px;
@@ -33,12 +35,12 @@
 
 .Select-Wrapper-Error {
     .react-select__control {
-        border: 1px solid #ff500f;
+        border: 1px solid $BasicOrange;
     }
 
     .Select-Label,
     .Select-Error {
-        color: #ff500f;
+        color: $BasicOrange;
     }
 
     .Select-Error {

@@ -8,7 +8,7 @@ export type Field = {
   id: FieldId;
   label: string;
   type: string;
-  validation?: string;
+  mask?: string;
 };
 
 export enum FieldId {
@@ -27,13 +27,13 @@ export const questionArray: Question[] = [
           "id": FieldId.firstName,
           "label": "First Name",
           "type": "input",
-          "validation": ""
+          "mask": ""
         },
         {
           "id": FieldId.lastName,
           "label": "Last Name",
           "type": "input",
-          "validation": ""
+          "mask": ""
         }
       ]
     },
@@ -45,7 +45,7 @@ export const questionArray: Question[] = [
           "id": FieldId.phoneNumber,
           "label": "Phone Number",
           "type": "input",
-          "validation": "(999) 999-9999"
+          "mask": "(999) 999-9999"
         }
       ]
     },

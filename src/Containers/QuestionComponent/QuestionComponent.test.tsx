@@ -10,7 +10,7 @@ export const validStoreInfo = {
     firstName: "Julia",
     lastName: "Romanyk",
     phoneNumber: "0987898909",
-    stateName: "",
+    stateName: "Alaska",
 }
 
 export const invalidStoreInfo = {
@@ -29,13 +29,25 @@ const mockProps = {
           "id": FieldId.firstName,
           "label": "First Name",
           "type": "input",
-          "validation": "^.{3,128}$"
+          "mask": "^.{3,128}$"
         },
         {
           "id": FieldId.lastName,
           "label": "Last Name",
           "type": "input",
-          "validation": "^.{3,128}$"
+          "mask": "^.{3,128}$"
+        },
+        {
+          "id": FieldId.phoneNumber,
+          "label": "Phone Number",
+          "type": "input",
+          "mask": "(999) 999-9999"
+        },
+        {
+          "id": FieldId.stateName,
+          "label": "State",
+          "type": "select",
+          "mask": ""
         }
       ],
     infoStore: validStoreInfo,

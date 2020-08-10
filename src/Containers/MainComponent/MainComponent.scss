@@ -1,7 +1,9 @@
+@import "utils/_variables";
+
 .prog {
     width: 100%;
     height: 15px;
-    background: #ffbe1e;
+    background: $SecondOrange;
 }
 
 .MainComponent-Wrapper {
@@ -12,7 +14,7 @@
 
 .MainComponent {
     width: 100%;
-    background: #fcfaf9;
+    background: $BackgroundColor;
     margin-top: 84px;
 }
 

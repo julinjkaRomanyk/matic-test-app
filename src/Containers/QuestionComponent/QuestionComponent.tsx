@@ -28,6 +28,10 @@ export const QuestionComponent: React.FC<Props> = ({ questionTitle, buttonLabel,
  
 
         const handleButtonClick = () => {
+            // All switch cases can be refactored in favor of a small method that could automatically take RegExp
+            //  from the api and just test field with proper regex string and return default "Invalid value" error message
+            // So later I'd like to explain my choice of creating separate error form
+
             const isFormValid = fields.map(field => {
                 switch (field.id) {
                     case FieldId.firstName: return validators.firstNameValid(infoStore[field.id]);
@@ -64,7 +68,7 @@ export const QuestionComponent: React.FC<Props> = ({ questionTitle, buttonLabel,
                         {
                             fields.map((field: Field) => {
                                 switch (field.type) {
-                                    case "input": return <Input key={questionNumber + field.id} error={validationErrors[field.id]} label={field.label} onChange={(event) => handleValueChange(event, field.id )} mask={field.validation} />;           
+                                    case "input": return <Input key={questionNumber + field.id} error={validationErrors[field.id]} label={field.label} onChange={(event) => handleValueChange(event, field.id )} mask={field.mask} />;           
                                     case "select": return <Select key={questionNumber + field.id} error={validationErrors[field.id]} selectProps={{...selectProps, onChange: (state: any) => handleValueChange(state.value, field.id) }} label={field.label} />;
                                     default: return <Input  key={questionNumber + field.id} onChange={ () => {} } />;
                                 }

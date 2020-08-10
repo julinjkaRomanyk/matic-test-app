@@ -13,7 +13,7 @@ describe(getTestName(__dirname), () => {
       expect(container.firstChild).toMatchSnapshot();
     });
 
-     test("Should call fakeInputCallback onClick", () => {
+     test("Should call fakeInputCallback on type", () => {
         const { getByTestId } = render(<Input onChange={fakeInputCallback} />);
         const inputSymbol = "A";
     
@@ -21,6 +21,16 @@ describe(getTestName(__dirname), () => {
         fireEvent.change(input, { target: { value: inputSymbol } });
 
         expect(fakeInputCallback).toBeCalledTimes(1);
+        expect(fakeInputCallback).toBeCalledWith(inputSymbol)
+      });
+
+      test("Should call fakeInputCallback on type for mask input", () => {
+        const { getByTestId } = render(<Input onChange={fakeInputCallback} mask="a" />);
+        const inputSymbol = "A";
+    
+        const input = getByTestId("Input-Mask")
+        fireEvent.change(input, { target: { value: inputSymbol } });
+
         expect(fakeInputCallback).toBeCalledWith(inputSymbol)
       });
 

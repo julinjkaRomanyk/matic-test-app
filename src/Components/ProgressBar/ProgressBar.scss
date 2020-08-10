@@ -1,11 +1,12 @@
 @import "~@fremtind/jkl-core/mixins/_motion.scss";
 @import "~@fremtind/jkl-core/variables/_colors.scss";
 @import "~@fremtind/jkl-core/_functions.scss";
+@import "utils/_variables";
 
 $height: rem(8px);
 
 .jkl-progress-bar {
-    background-color: #F9ECE7;
+    background-color: $DarkPowder;
     height: $height;
     width: 100%;
     overflow: hidden;
@@ -13,7 +14,7 @@ $height: rem(8px);
     &__tracker {
         display: block;
         height: $height;
-        background-color: #FFBE1E;
+        background-color: $SecondOrange;
         transition-property: width;
         @include motion("easeInBounceOut", "lazy");
     }

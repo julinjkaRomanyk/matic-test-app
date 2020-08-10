@@ -1,25 +1,27 @@
+@import "utils/_variables";
+
 .Button {
     height: 60px;
     width: 185px;
     border-radius: 30px;
-    background-color: #ff5122;
-    color: white;
+    background-color: $BasicOrange;
+    color: $BasicWhite;
     font-size: 20px;
     font-weight: bold;
     border: none;
 }
 
 .Button:hover {
-    background-color: white;
-    color: #ff5122;
-    border: 2px solid #ff5122;
+    background-color: $BasicWhite;
+    color: $BasicOrange;
+    border: 2px solid $BasicOrange;
     cursor: pointer;
 }
 
 .Button:active {
-    background-color: #ffbe1e;
-    color: #ff5122;
-    border: 2px solid #ff5122;
+    background-color: $SecondOrange;
+    color: $BasicOrange;
+    border: 2px solid$BasicOrange;
 }
 
 .Button:focus {

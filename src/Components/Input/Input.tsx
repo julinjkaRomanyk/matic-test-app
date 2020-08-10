@@ -26,8 +26,9 @@ export const Input: React.FC<Props> = ({ label = "", error = "", onChange, mask 
                     value={inputValue}
                     onChange={event => handleValueChange(event.target.value)}
                     mask={mask}
+                    data-testid="Input-Mask" 
                 >
-                    {(inputProps: any) => <input {...inputProps} data-testid="Input" />}
+                    {(inputProps: any) => <input {...inputProps}/>}
                 </InputMask>
             )
         } else return (
